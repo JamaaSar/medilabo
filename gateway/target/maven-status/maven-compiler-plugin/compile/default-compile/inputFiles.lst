@@ -1,0 +1,9 @@
+/Users/jamaa/Desktop/openclassroom/lastproject/gateway copy/src/main/java/com/service/gateway/config/SpringSecurityConfig.java
+/Users/jamaa/Desktop/openclassroom/lastproject/gateway copy/src/main/java/com/service/gateway/config/JwtAuthenticationFilter.java
+/Users/jamaa/Desktop/openclassroom/lastproject/gateway copy/src/main/java/com/service/gateway/config/JWTUtil.java
+/Users/jamaa/Desktop/openclassroom/lastproject/gateway copy/src/main/java/com/service/gateway/controller/AuthController.java
+/Users/jamaa/Desktop/openclassroom/lastproject/gateway copy/src/main/java/com/service/gateway/controller/GatewayConfig.java
+/Users/jamaa/Desktop/openclassroom/lastproject/gateway copy/src/main/java/com/service/gateway/controller/CredentialsDTO.java
+/Users/jamaa/Desktop/openclassroom/lastproject/gateway copy/src/main/java/com/service/gateway/config/InMemoryReactiveUserDetailsService.java
+/Users/jamaa/Desktop/openclassroom/lastproject/gateway copy/src/main/java/com/service/gateway/GatewayApplication.java
+/Users/jamaa/Desktop/openclassroom/lastproject/gateway copy/src/main/java/com/service/gateway/service/JwtService.java
