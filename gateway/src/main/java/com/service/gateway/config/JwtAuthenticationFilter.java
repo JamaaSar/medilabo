@@ -1,5 +1,6 @@
 package com.service.gateway.config;
 
+import com.service.gateway.exception.JwtSecurityException;
 import com.service.gateway.service.JWTService;
 import io.jsonwebtoken.Claims;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -55,7 +56,12 @@ public class JwtAuthenticationFilter implements GatewayFilter {
                 return response.setComplete();
             }
 
-            Claims claims = jwtService.getClaims(token);
+            Claims claims = null;
+            try {
+                claims = jwtService.getClaims(token);
+            } catch (JwtSecurityException e) {
+                throw new RuntimeException(e);
+            }
             exchange.getRequest().mutate().header("id",
                     String.valueOf(claims.get("sub"))).build();
         }

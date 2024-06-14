@@ -17,7 +17,10 @@ public class GatewayConfig {
         return builder.routes().route("auth", r -> r.path("/auth/**").filters(f -> f.filter(filter)).uri("lb://auth"))
                 .route("patient",
                         r -> r.path("/patient/**").filters(f -> f.filter(filter)).uri(
-                                "http://localhost:8081")).build();
+                                "http://localhost:8081"))
+                .route("note",
+                        r -> r.path("/note/**").filters(f -> f.filter(filter)).uri(
+                                "http://localhost:8082")).build();
     }
 
 }

@@ -5,38 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9bdcfb8e-3670-432e-ba22-ceb3f58edbc4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/service/gateway/exception/JwtSecurityException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../note/src/main/java/com/service/note/DataLoader.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/service/gateway/config/InMemoryReactiveUserDetailsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/service/gateway/service/CustomUserDetailsService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/service/gateway/config/JWTUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/service/gateway/service/JWTService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/service/gateway/config/GatewayConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/service/gateway/config/GatewayConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/service/gateway/config/JwtAuthenticationFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/service/gateway/config/JwtAuthenticationFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/service/gateway/config/SpringSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/service/gateway/config/SpringSecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/service/gateway/controller/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/service/gateway/controller/AuthController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/service/gateway/controller/CredentialsDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/service/gateway/dto/CredentialsDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/service/gateway/controller/GatewayConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/service/gateway/config/GatewayConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/service/gateway/service/JwtService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/service/gateway/config/InMemoryReactiveUserDetailsService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/service/gateway/config/JWTUtil.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/service/gateway/config/GatewayConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/service/gateway/config/GatewayConfig.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/service/gateway/config/JwtAuthenticationFilter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/service/gateway/config/JwtAuthenticationFilter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/service/gateway/config/SpringSecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/service/gateway/config/SpringSecurityConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/service/gateway/controller/AuthController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/service/gateway/controller/AuthController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/service/gateway/controller/CredentialsDTO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/service/gateway/controller/GatewayConfig.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/service/gateway/service/JwtService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/service/gateway/service/JwtService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/service/gateway/service/JWTService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/service/gateway/service/JWTService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../patient/src/main/java/com/service/patient/controller/PatientController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../patient/src/main/java/com/service/patient/controller/PatientController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../patient/src/main/java/com/service/patient/entity/Patient.java" beforeDir="false" afterPath="$PROJECT_DIR$/../patient/src/main/java/com/service/patient/entity/Patient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../patient/src/main/java/com/service/patient/mapper/PatientMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/../patient/src/main/java/com/service/patient/mapper/PatientMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../patient/src/main/java/com/service/patient/service/PatientService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../patient/src/main/java/com/service/patient/service/PatientService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../patient/target/classes/com/service/patient/controller/PatientController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../patient/target/classes/com/service/patient/controller/PatientController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../patient/target/classes/com/service/patient/entity/Patient.class" beforeDir="false" afterPath="$PROJECT_DIR$/../patient/target/classes/com/service/patient/entity/Patient.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../patient/target/classes/com/service/patient/mapper/PatientMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/../patient/target/classes/com/service/patient/mapper/PatientMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../patient/target/classes/com/service/patient/mapper/PatientMapperImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/../patient/target/classes/com/service/patient/mapper/PatientMapperImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../patient/target/classes/com/service/patient/service/PatientService.class" beforeDir="false" afterPath="$PROJECT_DIR$/../patient/target/classes/com/service/patient/service/PatientService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../patient/target/generated-sources/annotations/com/service/patient/mapper/PatientMapperImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../patient/target/generated-sources/annotations/com/service/patient/mapper/PatientMapperImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../patient/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/../patient/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../patient/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/../patient/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../patient/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/../patient/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,6 +27,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$/.." value="test" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -227,6 +208,29 @@
       <updated>1717249038464</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="main" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
