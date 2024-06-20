@@ -1,4 +1,4 @@
-package com.service.risk.Client;
+package com.service.risk.client;
 import com.service.note.dto.NoteDTO;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
