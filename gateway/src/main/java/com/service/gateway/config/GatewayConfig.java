@@ -20,7 +20,11 @@ public class GatewayConfig {
                                 "http://localhost:8081"))
                 .route("note",
                         r -> r.path("/note/**").filters(f -> f.filter(filter)).uri(
-                                "http://localhost:8082")).build();
+                                "http://localhost:8082"))
+                .route("note",
+                        r -> r.path("/risk/**").filters(f -> f.filter(filter)).uri(
+                                "http://localhost:8083"))
+                .build();
     }
 
 }

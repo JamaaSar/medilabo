@@ -7,9 +7,6 @@ import lombok.*;
 @NoArgsConstructor
 @Builder
 @Generated
-public class NoteDTO {
-    private String id;
-    private Integer patientId;
-    private String userName;
+public class UpdateNoteDTO {
     private String noteObservation;
 }
