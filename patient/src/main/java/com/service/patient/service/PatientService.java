@@ -7,13 +7,15 @@ import com.service.patient.repository.PatientRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @RequiredArgsConstructor
 @Service
 public class PatientService {
     private final PatientRepository repository;
     private final PatientMapper mapper;
 
-    public Iterable<PatientDTO> getAll() {
+    public List<PatientDTO> getAll() {
         return mapper.toPatientDtoList(repository.findAll());
     }
     public PatientDTO findById(Integer id) {

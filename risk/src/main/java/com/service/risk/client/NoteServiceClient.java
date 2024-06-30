@@ -1,12 +1,13 @@
 package com.service.risk.client;
-import com.service.note.dto.NoteDTO;
+
+import com.service.risk.dto.NoteDTO;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.List;
 
-@FeignClient(name = "note", url = "http://localhost:8082/note")
+@FeignClient(name = "note", url = "${note.url}")
 public interface NoteServiceClient {
 
     @GetMapping("/{id}")

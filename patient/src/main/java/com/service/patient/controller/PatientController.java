@@ -16,6 +16,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/patient")
 public class PatientController {
@@ -23,6 +25,11 @@ public class PatientController {
     @Autowired
     private PatientService service;
 
+    @GetMapping
+    public ResponseEntity<List<PatientDTO>> getAll() {
+        return ResponseEntity.status(HttpStatus.OK)
+                .body(service.getAll());
+    }
     @GetMapping("/{id}")
     public ResponseEntity<PatientDTO> get(@PathVariable("id") Integer id) {
         return ResponseEntity.status(HttpStatus.OK)
@@ -39,7 +46,7 @@ public class PatientController {
         return ResponseEntity.status(HttpStatus.OK).
                 body(service.update(id,patientDTO));
     }
-    @PostMapping("/{id}")
+    @PostMapping
     public ResponseEntity<PatientDTO> ajouter(@RequestBody @Valid PatientDTO patientDTO ) {
         return ResponseEntity.status(HttpStatus.OK).
                 body(service.save(patientDTO));

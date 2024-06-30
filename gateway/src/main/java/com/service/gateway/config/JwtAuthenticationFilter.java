@@ -48,7 +48,6 @@ public class JwtAuthenticationFilter implements GatewayFilter {
             try {
                 jwtService.validateToken(token);
             } catch (Exception e) {
-                // e.printStackTrace();
 
                 ServerHttpResponse response = exchange.getResponse();
                 response.setStatusCode(HttpStatus.BAD_REQUEST);

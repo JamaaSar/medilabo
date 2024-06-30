@@ -18,35 +18,34 @@ public class NoteController {
     @Autowired
     private NoteService service;
 
-
-
     @GetMapping("/{id}")
     public ResponseEntity<NoteDTO> get(@PathVariable("id") ObjectId id) {
         return ResponseEntity.status(HttpStatus.OK)
                 .body(service.findById(id));
     }
 
-    @GetMapping("/user/{patientid}")
+    @GetMapping("/patient/{patientid}")
     public ResponseEntity<List<NoteDTO>> getByPatientId(@PathVariable("patientid") Integer patientId) {
         return ResponseEntity.status(HttpStatus.OK)
                 .body(service.findByPatientId(patientId));
     }
 
     @DeleteMapping("/{id}")
-    public void delete(@PathVariable("id") ObjectId id) {
+    public void delete(@PathVariable("id") Integer id) {
         service.deleteById(id);
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<NoteDTO> update(@PathVariable("id") ObjectId id,
+    public ResponseEntity<NoteDTO> update(@PathVariable("id") Integer id,
                        @RequestBody UpdateNoteDTO noteObservation ) {
         return ResponseEntity.status(HttpStatus.OK)
-                .body(service.update(id,noteObservation));
+                .body(service.update(String.valueOf(id),noteObservation));
     }
 
-    @PostMapping
-    public ResponseEntity<NoteDTO> save(@RequestBody NoteDTO noteDTO ) {
+    @PostMapping("/patient/{patientid}")
+    public ResponseEntity<NoteDTO> save(@PathVariable("patientid") Integer id,
+                                        @RequestBody UpdateNoteDTO noteDTO ) {
         return ResponseEntity.status(HttpStatus.OK)
-                .body(service.save(noteDTO));
+                .body(service.save(id,noteDTO));
     }
 }

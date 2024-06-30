@@ -1,6 +1,7 @@
 package com.service.gateway.controller;
 
 import com.service.gateway.dto.CredentialsDTO;
+import com.service.gateway.dto.UserDTO;
 import com.service.gateway.service.CustomUserDetailsService;
 import com.service.gateway.service.JWTService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,11 +16,12 @@ public class AuthController {
     @Autowired
     JWTService jwtService;
     @PostMapping("/auth/login")
-    public ResponseEntity<?> login(@RequestBody CredentialsDTO credentialsDto) {
+    public ResponseEntity<UserDTO> login(@RequestBody CredentialsDTO credentialsDto) {
         User user=
                 customUserDetailsService.findByUsername(credentialsDto.username());
         String token= jwtService.generateToken(user);
+        UserDTO userDTO = new UserDTO(user.getUsername(), token);
 
-        return ResponseEntity.ok(token);
+        return ResponseEntity.ok(userDTO);
     }
 }

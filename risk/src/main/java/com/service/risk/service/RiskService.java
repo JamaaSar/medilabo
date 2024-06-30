@@ -1,9 +1,9 @@
 package com.service.risk.service;
 
-import com.service.note.dto.NoteDTO;
-import com.service.patient.dto.PatientDTO;
 import com.service.risk.client.NoteServiceClient;
 import com.service.risk.client.PatientServiceClient;
+import com.service.risk.dto.NoteDTO;
+import com.service.risk.dto.PatientDTO;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

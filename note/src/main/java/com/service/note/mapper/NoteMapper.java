@@ -17,7 +17,7 @@ public interface NoteMapper {
 
     @Mapping(target = "id", source = "id", qualifiedByName = "toString")
     NoteDTO toNoteDto(Note patient);
-    @Mapping(target = "id", source = "id", qualifiedByName = "toObject")
+    @Mapping(target="id", ignore=true)
     Note toDtoNote(NoteDTO noteDTO);
 
     @Mapping(target = "id", source = "id", qualifiedByName = "toString")
