@@ -13,7 +13,7 @@ public interface NoteServiceClient {
     @GetMapping("/{id}")
     NoteDTO get(@PathVariable Integer id);
 
-    @GetMapping("/user/{patientid}")
+    @GetMapping("/patient/{patientid}")
     List<NoteDTO> getByPatientId(@PathVariable("patientid") Integer patientId);
 
 }

@@ -55,8 +55,8 @@ public class NoteService {
         repository.save(note);
         return mapper.toNoteDto(note);
     }
-    public void deleteById(Integer id) {
-        repository.deleteById(new ObjectId(String.valueOf(id)));
+    public void deleteById(String id) {
+        repository.deleteById(new ObjectId(id));
     }
 
 }

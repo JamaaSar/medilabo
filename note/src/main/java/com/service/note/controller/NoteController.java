@@ -31,15 +31,15 @@ public class NoteController {
     }
 
     @DeleteMapping("/{id}")
-    public void delete(@PathVariable("id") Integer id) {
+    public void delete(@PathVariable("id") String id) {
         service.deleteById(id);
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<NoteDTO> update(@PathVariable("id") Integer id,
+    public ResponseEntity<NoteDTO> update(@PathVariable("id") String id,
                        @RequestBody UpdateNoteDTO noteObservation ) {
         return ResponseEntity.status(HttpStatus.OK)
-                .body(service.update(String.valueOf(id),noteObservation));
+                .body(service.update(id,noteObservation));
     }
 
     @PostMapping("/patient/{patientid}")

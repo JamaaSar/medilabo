@@ -25,6 +25,7 @@ public class RiskService {
     );
     public String calculateRiskDiabete(Integer patientId){
 
+
         PatientDTO patient = patientServiceClient.get(patientId);
         List<NoteDTO> noteList = noteServiceClient.getByPatientId(patient.getId());
         if(noteList.isEmpty()){
