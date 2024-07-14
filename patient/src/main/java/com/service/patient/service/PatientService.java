@@ -2,6 +2,8 @@ package com.service.patient.service;
 
 import com.service.patient.dto.PatientDTO;
 import com.service.patient.entity.Patient;
+import com.service.patient.exceptions.BadRequestException;
+import com.service.patient.exceptions.NotFoundException;
 import com.service.patient.mapper.PatientMapper;
 import com.service.patient.repository.PatientRepository;
 import lombok.RequiredArgsConstructor;
@@ -20,17 +22,21 @@ public class PatientService {
     }
     public PatientDTO findById(Integer id) {
         Patient patient = repository.findById(id)
-                .orElseThrow();
+                .orElseThrow(() -> new NotFoundException("Patient  introuvable"));
         return mapper.toPatientDto(patient);
     }
     public PatientDTO save(PatientDTO patientDTO) {
         Patient patient = mapper.toDtoPatient(patientDTO);
-        repository.save(patient);
+        try {
+            repository.save(patient);
+        } catch (BadRequestException e) {
+            throw new BadRequestException("Échec de l'enregistrement du patient");
+        }
         return patientDTO;
     }
     public PatientDTO update(Integer id, PatientDTO patientDTO) {
         Patient patient = repository.findById(id)
-                .orElseThrow();
+               .orElseThrow(() -> new NotFoundException("Patient  introuvable"));
         if (patientDTO.getPrenom() != null) {
             patient.setPrenom(patientDTO.getPrenom());
         }
@@ -49,7 +55,11 @@ public class PatientService {
         if (patientDTO.getNumeroDeTelephone() != null) {
             patient.setNumeroDeTelephone(patientDTO.getNumeroDeTelephone());
         }
-        repository.save(patient);
+        try {
+            repository.save(patient);
+        } catch (BadRequestException e) {
+            throw new BadRequestException("Échec de la mise à jour du patient");
+        }
         return mapper.toPatientDto(patient);
     }
     public void deleteById(Integer id) {

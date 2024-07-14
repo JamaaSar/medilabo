@@ -13,6 +13,8 @@ public class Patient {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+    @NotNull(message = "Prenom est obligatoire")
+    @Column(unique=true)
     private String prenom;
     @NotNull(message = "Nom est obligatoire")
     private String nom;

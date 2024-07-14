@@ -7,7 +7,7 @@ import org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfigurat
 import org.springframework.cloud.openfeign.EnableFeignClients;
 
 @SpringBootApplication(exclude = {DataSourceAutoConfiguration.class, HibernateJpaAutoConfiguration.class})
-@EnableFeignClients // Enable Feign clients scanning
+@EnableFeignClients
 public class NoteApplication {
 
 	public static void main(String[] args) {
