@@ -19,7 +19,7 @@ public class NoteController {
     private NoteService service;
 
     @GetMapping("/{id}")
-    public ResponseEntity<NoteDTO> get(@PathVariable("id") ObjectId id) {
+    public ResponseEntity<NoteDTO> get(@PathVariable("id") String id) {
         return ResponseEntity.status(HttpStatus.OK)
                 .body(service.findById(id));
     }

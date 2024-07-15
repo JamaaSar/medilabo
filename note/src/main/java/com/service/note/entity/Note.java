@@ -1,7 +1,5 @@
 package com.service.note.entity;
 
-import com.fasterxml.jackson.databind.annotation.JsonSerialize;
-import com.fasterxml.jackson.databind.ser.std.ToStringSerializer;
 import jakarta.persistence.Id;
 import lombok.*;
 import org.bson.types.ObjectId;

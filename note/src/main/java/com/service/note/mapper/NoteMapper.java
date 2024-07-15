@@ -21,7 +21,7 @@ public interface NoteMapper {
     Note toDtoNote(NoteDTO noteDTO);
 
     @Mapping(target = "id", source = "id", qualifiedByName = "toString")
-    List<NoteDTO> toNoteDtoList(List<Note> patientList);
+    List<NoteDTO> toNoteDtoList(List<Note> noteList);
 
     @Named("toString")
     default String toString(ObjectId id){
