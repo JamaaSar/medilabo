@@ -10,6 +10,6 @@ import lombok.*;
 public class NoteDTO {
     private String id;
     private Integer patientId;
-    private String userName;
+    private String patientName;
     private String noteObservation;
 }

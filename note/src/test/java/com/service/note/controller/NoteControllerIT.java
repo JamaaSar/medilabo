@@ -11,7 +11,6 @@ import org.bson.types.ObjectId;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import org.mockito.Mock;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
@@ -24,7 +23,6 @@ import org.springframework.web.context.WebApplicationContext;
 
 import java.util.Date;
 import java.util.List;
-import java.util.Optional;
 
 import static org.mockito.Mockito.when;
 import static org.springframework.security.test.web.servlet.request.SecurityMockMvcRequestPostProcessors.csrf;
@@ -38,7 +36,6 @@ public class NoteControllerIT {
     @Autowired
     private WebApplicationContext context;
     @Autowired
-
     private NoteRepository repository;
     @MockBean
     private PatientServiceClient patientServiceClient;
@@ -126,7 +123,6 @@ public class NoteControllerIT {
         List<Note> allNote = repository.findAll();
         Note note1 = allNote.getFirst();
         when(patientServiceClient.get(note1.getPatientId())).thenReturn(patient);
-        when(patientServiceClient.get(1)).thenReturn(patient);
 
         mockMvc.perform(post("/note/patient/{id}",note1.getPatientId())
                         .with(csrf())
