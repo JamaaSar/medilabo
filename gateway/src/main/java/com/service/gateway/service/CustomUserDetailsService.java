@@ -11,8 +11,6 @@ public class CustomUserDetailsService {
     private static final Logger log = LoggerFactory.getLogger(SecurityConfig.class);
 
     public User findByUsername(String username) {
-        System.out.println(username);
-        log.info("Attempting to find user by username: {}", username);
         if ("user".equals(username)) {
             return
                     (User) User.withUsername("user")
@@ -28,8 +26,6 @@ public class CustomUserDetailsService {
                             .build(
             );
         } else {
-            log.info("not found username: {}", username);
-
             return null;
         }
     }
