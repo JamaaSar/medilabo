@@ -1,5 +1,6 @@
 package com.service.patient.dto;
 
+import jakarta.annotation.Nullable;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;

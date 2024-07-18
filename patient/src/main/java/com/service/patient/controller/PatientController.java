@@ -48,6 +48,7 @@ public class PatientController {
     }
     @PostMapping
     public ResponseEntity<PatientDTO> ajouter(@RequestBody @Valid PatientDTO patientDTO ) {
+        System.out.println(patientDTO);
         return ResponseEntity.status(HttpStatus.OK).
                 body(service.save(patientDTO));
     }
