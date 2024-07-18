@@ -1,0 +1,33 @@
+.homepage {
+  padding-top: 40px;
+  display: flex;
+  gap: 100px;
+  height: 100%;
+  .patientListSection{
+    height: 80%;
+    padding: 15px 0px;
+    .searchSection{
+        input,
+        textarea {
+          border: 1px solid;
+          border-radius: 8px;
+          padding: 0 15px;
+          margin: 5px;
+        }
+        input{
+          width: 300px;
+          height: 30px;
+        }
+      }
+      .individual{
+        display: flex;
+        justify-content: space-between;
+        button{
+          background:transparent;
+          border: none;
+        }
+
+}
+  }
+ 
+}

@@ -1,0 +1,90 @@
+
+html,
+body {
+  max-width: 100%;
+  height: 100%;
+  background-color: #F8FEFF;
+}
+body {
+  margin: 0 auto;
+  padding: 0 10%;
+  font-family:  "Ubuntu", sans-serif;
+}
+
+.custom_input {
+  width: 300px;
+  height: 30px;
+  border: none;
+  background-color: transparent;
+  outline: none;
+  padding: 0 5px;
+  appearance: none;
+}
+.custom_div {
+  border: 1px solid #276E7C;
+  display: flex;
+  border-radius: 4px;
+  background-color: #f0f4f3;
+  color: black;
+  padding: 0 15px;
+  height: 50px;
+  margin: 5px 0;
+  align-items: center;
+}
+/* Change autocomplete styles in WebKit */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  border: none;
+  -webkit-text-fill-color: black;
+  -webkit-box-shadow: 0 0 0px 1000px transparent inset;
+  transition: background-color 5000s ease-in-out 0s;
+}
+input:-internal-autofill-selected {
+  appearance: menulist-button;
+  background-image: none !important;
+  background-color: transparent !important;
+  color: fieldtext !important;
+}
+input {
+  font-family:  "Corsiva Hebrew", sans-serif;
+  color: #276E7C;
+  &::placeholder {
+    font-family:  "Ubuntu", sans-serif !important;
+    color: #276E7C;
+    opacity: 0.5;
+  }
+}
+.custom_icon {
+  font-size: 20px;
+  align-self: center;
+}
+.alert {
+  margin-top: 15px;
+  background-color: rgb(200, 60, 60);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  color: white;
+  padding: 5px 0;
+  border-radius: 4px;
+}
+.is-invalid {
+  border: 0.5px solid rgb(195, 70, 70);
+}
+.p-paginator {
+  button {
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 100%;
+    margin: 20px 5px;
+  }
+}

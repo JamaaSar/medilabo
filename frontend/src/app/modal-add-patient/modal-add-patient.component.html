@@ -1,0 +1,52 @@
+<div class="modal-overlay" (click)="closeModal()">
+    <div class="modal-content" (click)="$event.stopPropagation()">
+        <div class="modal-header">
+            <h2>Ajouter un patient</h2>
+            <button (click)="closeModal()">X</button>
+        </div>
+        <form name="form" (ngSubmit)="addNewPatient()" [formGroup]="patientForm" novalidate>
+            <div>
+                <label>Nom</label>
+                <input placeholder="Nom" type="text" class="" name="nom" formControlName="nom" required />
+                <div *ngIf="patientForm.get('nom')?.touched && patientForm.get('nom')?.invalid">
+                    <small *ngIf="patientForm.get('nom').errors?.required">Nom is required</small>
+                </div>
+            </div>
+            <div>
+                <label>Prénom</label>
+                <input placeholder="Prénom" type="text" class="form-control" name="prenom" formControlName="prenom"
+                    required />
+                <div *ngIf="patientForm.get('prenom')?.touched && patientForm.get('prenom')?.invalid">
+                    <small *ngIf="patientForm.get('prenom').errors?.required">Nom is required</small>
+                </div>
+            </div>
+            <div>
+                <label>Date de naissance</label>
+                <input placeholder="Date de naissance" type="text" class="form-control" name="dateDeNaissance"
+                    formControlName="dateDeNaissance" required />
+                <div *ngIf="patientForm.get('dateDeNaissance')?.touched && patientForm.get('dateDeNaissance')?.invalid">
+                    <small *ngIf="patientForm.get('dateDeNaissance').errors?.required">Nom is required</small>
+                </div>
+            </div>
+            <div>
+                <label>Genre</label>
+                <input placeholder="Genre" type="text" class="form-control" name="genre" formControlName="genre"
+                    required />
+                <div *ngIf="patientForm.get('genre')?.touched && patientForm.get('genre')?.invalid">
+                    <small *ngIf="patientForm.get('genre').errors?.required">Nom is required</small>
+                </div>
+            </div>
+            <div>
+                <label>Adresse postale</label>
+                <input placeholder="Adresse postale" type="text" class="form-control" name="adressePostale"
+                    formControlName="adressePostale" />
+            </div>
+            <div>
+                <label>Numéro de téléphone</label>
+                <input placeholder="Numéro de téléphone" type="text" class="form-control" name="numeroDeTelephone"
+                    formControlName="numeroDeTelephone" />
+            </div>
+            <button type="submit">Ok</button>
+        </form>
+    </div>
+</div>

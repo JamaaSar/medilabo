@@ -1,0 +1,28 @@
+header {
+  top: 20px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  .logoIcon {
+    padding-top: 60px !important;
+    display: flex;
+    gap: 20px;
+    text-transform: uppercase;
+    color: #276E7C;
+  }
+  .menu {
+    display: flex;
+    list-style: none;
+    color: rgb(81, 156, 239);
+    //  color: rgb(239, 104, 17);
+    li {
+      margin: 5px 15px;
+      cursor: pointer;
+    }
+    .greeting {
+      cursor: none;
+      font-size: 20px;
+    }
+  }
+}

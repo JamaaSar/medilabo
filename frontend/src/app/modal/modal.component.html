@@ -1,0 +1,14 @@
+<div class="modal-overlay" (click)="closeModal()">
+    <div class="modal-content" (click)="$event.stopPropagation()">
+        <div class="modal-header">
+            <h2> {{addModal ? "Ajouter un note" : "Editer un note"}}</h2>
+            <button (click)="closeModal()">X</button>
+        </div>
+        <form name="form" (ngSubmit)="addModal ? addNewNote() : editNote()" [formGroup]="noteObservationForm"
+            novalidate>
+            <textarea type="text" class="form-control" name="noteObservation" formControlName="noteObservation"
+                required></textarea>
+            <button type="submit">Ok</button>
+        </form>
+    </div>
+</div>

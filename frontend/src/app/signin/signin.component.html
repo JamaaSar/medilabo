@@ -1,0 +1,30 @@
+<div class="signinForm">
+  <h2>Connexion</h2>
+<form class="signinForm" [formGroup]="signinForm" name="form" (ngSubmit)="onLogin()" novalidate>
+  <div class="custom_div" [class.is-invalid]="email.invalid && email.touched">
+    <mat-icon aria-hidden="false" class="custom_icon" fontIcon="mail"></mat-icon>
+    <input type="text" class="custom_input" name="email" placeholder="Adresse e-mail" formControlName="email" />
+  </div>
+  <div *ngIf="(email.invalid && email.touched) || email.dirty">
+    <small *ngIf="email.errors?.required" class="text-danger">Email is required</small>
+    <!--question mark(?) is a safe navigation operator-->
+    <small *ngIf="email.errors?.pattern" class="text-danger">Please provide a valid email address</small>
+  </div>
+  <div class="custom_div" [class.is-invalid]="password.invalid && password.touched">
+    <mat-icon aria-hidden="false" class="custom_icon" fontIcon="lock"></mat-icon>
+    <input class="custom_input" placeholder="Mot de password" type="password" name="password" formControlName="password" />
+  </div>
+  <div *ngIf="(password.invalid && password.touched) || password.dirty">
+    <small *ngIf="password.errors?.required" class="text-danger">Password is required</small>
+    <!--question mark(?) is a safe navigation operator-->
+    <small *ngIf="password.errors?.minlength" class="text-danger">Password must be 8 characters long</small>
+  </div>
+
+  <div class="form-group">
+    <div *ngIf="isLoginFailed" class="alert" role="alert">
+      {{ errorMessage }}
+    </div>
+  </div>
+  <button [disabled]="signinForm.invalid" type="submit" class="btn btn-primary btn-block">Sign in</button>
+</form>
+</div>

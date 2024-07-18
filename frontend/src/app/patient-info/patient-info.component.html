@@ -1,0 +1,48 @@
+<div class="card" *ngIf="patient">
+    <h2> User Info</h2>
+    <div class="userinfo">
+        <ul>
+            <li><b>Prénom:</b> {{patient.prenom}} </li>
+            <li><b>Nom:</b> {{patient.nom}}</li>
+            <li><b>Date de naissance:</b> {{patient.dateDeNaissance | date:'yyyy-MM-dd'}}</li>
+            <li><b>Genre:</b> {{patient.genre}}</li>
+            <li><b>Adresse postale:</b> {{patient.adressePostale}}</li>
+            <li><b>Numéro de téléphone:</b> {{patient.numeroDeTelephone}}</li>
+        </ul>
+        <div class="riskInfo">
+            {{risk}}
+        </div>
+    </div>
+    <div class="note">
+        <button class="ajouteButton" (click)="openModal(null)"> Ajouter un note</button>
+        <p-table class="customTable" [value]="notes" [paginator]="false" [totalRecords]="notes?.length"
+            [showCurrentPageReport]="false">
+            <ng-template pTemplate="header">
+                <tr>
+                    <th>Notes</th>
+                    <th>Update</th>
+                    <th>Delete</th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-note>
+                <tr>
+                    <td>{{ note.noteObservation }} </td>
+                    <td>
+                        <button class="customIcon" (click)="openModal(note)">
+                            <mat-icon aria-hidden="false" class="custom_icon" fontIcon="create">
+                            </mat-icon>
+                        </button>
+                    </td>
+                    <td>
+                        <button class="customIcon" (click)="deleteNote(note.id)">
+                            <mat-icon aria-hidden="false" class="custom_icon" fontIcon="delete_sweep">
+                            </mat-icon>
+                        </button>
+                    </td>
+                </tr>
+            </ng-template>
+        </p-table>
+    </div>
+    <app-modal *ngIf="showModal" (close)="closeModal()" [patientId]="patient.id" [addModal]="addModal"
+        [noteToUpdate]="noteToUpdate" (noteAdded)="onNoteAdded($event)"></app-modal>
+</div>

@@ -1,0 +1,29 @@
+.signinForm {
+  width: 350px;
+  margin: 20px auto 0 auto;
+  h2{
+    color: #276E7C;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 38px;
+    font-style: italic;
+    font-weight: 500;
+  }
+  button {
+    margin: 10px auto 0 auto;
+    width: 150px;
+    height: 35px;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #276E7C;
+    border: 1px solid #276E7C;
+    color: white;
+    &:disabled {
+      background-color: #f0f4f3;
+      color: #276E7C;
+      border: 0.5px solid #276E7C;
+    }
+  }
+}
