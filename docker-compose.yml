@@ -54,6 +54,15 @@ services:
     environment:
       - patient.url=patient:8081/patient
       - note.url=note:8082/note
+  angular-app:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "4200:4200"
+    depends_on:
+      - gateway
+
   mongo-db:
     image: mongo:latest
     ports:
