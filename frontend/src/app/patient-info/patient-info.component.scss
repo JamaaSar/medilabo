@@ -12,9 +12,25 @@
     }
   }
   .riskInfo{
-    width: 150px;
+    width: 250px;
     height: 50px;
     border-radius: 8px;
+    text-align: center;
+    align-content: center;
+    color: #fff;
+    &.none{
+      background-color: rgb(46, 171, 46);
+    }
+     &.borderline{
+      background-color: #edcc3b;
+    }
+     &.indanger{
+      background-color: #FF7D49;
+    }
+      &.earlyonset{
+      background-color: #E4003A;
+    }
+    
   }
 }
 .note{
@@ -22,15 +38,7 @@
   flex-direction:column;
   align-items: flex-end;
   gap: 10px;
-  .ajouteButton{
-    width: 150px;
-    text-align: center;
-    padding: 5px;
-    border: 1px solid #58af9b;
-    border-radius: 8px;
-    background-color: #276E7C;
-    color: #fff;
-  }
+
 }
 .customTable,
 th,

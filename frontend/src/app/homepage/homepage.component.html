@@ -1,20 +1,20 @@
 <div class="homepage">
         <div class="patientListSection">
-                <div>
-                        <button (click)="openModal(null)" class="addPatient">Ajouter un(e) patient(e) </button>
+                <div class="addSection">
+                        <button (click)="openModal(null)" class="ajouteButton ajoute">Ajouter un(e) patient(e) </button>
                         
                         </div>
                         <div class="searchSection">
                                 <input #input type="text" placeholder="Nom Prénom" (input)="onInput($event)" />
-                                <ul *ngIf="searchResult.length > 0">
-                                <li *ngFor="let patient of searchResult" (click)="onClick(patient, input)" [hidden]="toggle">
+                                <ul class="searchResult" *ngIf="searchResult.length > 0">
+                                        <li class="item" *ngFor="let patient of searchResult" (click)="onClick(patient, input)" [hidden]="toggle">
                                         <p> {{ patient.prenom }} {{ patient.nom }}</p>
                                 </li>
                                 </ul>
                                 </div>
                 <div *ngFor="let patient of patientList">
                         <div class="individual">
-                                <p (click)="onClick(patient)"> {{patient.nom}} {{patient.prenom}} </p>
+                                <p (click)="onClick(patient,null)"> {{patient.nom}} {{patient.prenom}} </p>
                                 <button class="customIcon" (click)="deletePatient(patient.id)">
                                         <mat-icon aria-hidden="false" class="custom_icon" fontIcon="delete_sweep">
                                         </mat-icon>

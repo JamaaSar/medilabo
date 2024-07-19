@@ -59,7 +59,10 @@ export class HomepageComponent implements OnInit {
     this.getRisk();
     this.searchResult = [];
     this.notFound = false;
-    inputElement.value = '';
+    if (inputElement) {
+      inputElement.value = '';
+    }
+      
   }
   async getPatientNote() {
     this.patientService.getPatientNote(this.selectedPateint).subscribe({
@@ -84,7 +87,6 @@ export class HomepageComponent implements OnInit {
           patient.nom.toLowerCase().includes(e.target.value.toLowerCase()) ||
           patient.prenom.toLowerCase().includes(e.target.value.toLowerCase())
       );
-      console.log(this.searchResult);
       if (this.searchResult.length <= 0) {
         this.searchResult = [];
         this.notFound = true;

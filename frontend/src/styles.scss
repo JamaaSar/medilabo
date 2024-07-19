@@ -53,7 +53,6 @@ input:-internal-autofill-selected {
   color: fieldtext !important;
 }
 input {
-  font-family:  "Corsiva Hebrew", sans-serif;
   color: #276E7C;
   &::placeholder {
     font-family:  "Ubuntu", sans-serif !important;
@@ -88,3 +87,12 @@ input {
     margin: 20px 5px;
   }
 }
+  .ajouteButton{
+    width: 150px;
+    text-align: center;
+    padding: 5px;
+    border: 1px solid #58af9b;
+    border-radius: 8px;
+    background-color: #276E7C;
+    color: #fff;
+  }

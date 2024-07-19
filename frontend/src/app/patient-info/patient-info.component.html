@@ -9,7 +9,7 @@
             <li><b>Adresse postale:</b> {{patient.adressePostale}}</li>
             <li><b>Numéro de téléphone:</b> {{patient.numeroDeTelephone}}</li>
         </ul>
-        <div class="riskInfo">
+        <div class=" riskInfo {{getRiskColor(risk)}}">
             {{risk}}
         </div>
     </div>

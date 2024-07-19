@@ -1,12 +1,13 @@
 FROM node:alpine
 
-WORKDIR /usr/src/app
+WORKDIR /src/app
+
 COPY package*.json ./
-RUN npm install -g @angular/cli
-RUN npm install
+
+RUN npm install -g @angular/cli && npm install
 
 COPY . .
 
 EXPOSE 4200
 
-CMD ["ng", "serve", "--host", "0.0.0.0"]
+CMD ["npx", "ng", "serve", "--host", "0.0.0.0"]

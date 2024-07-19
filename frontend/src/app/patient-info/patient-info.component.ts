@@ -65,4 +65,15 @@ export class PatientInfoComponent {
       }
     );
   }
+  getRiskColor(risk: string) {
+    if (risk === 'Borderline') {
+      return 'borderline';
+    } else if (risk === 'InDanger') {
+      return 'indanger';
+    } else if (risk === 'EarlyOnset') {
+      return 'earlyonset';
+    } else {
+      return 'none';
+    }
+  }
 }

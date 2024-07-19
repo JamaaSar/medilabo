@@ -3,31 +3,58 @@
   display: flex;
   gap: 100px;
   height: 100%;
-  .patientListSection{
+  .patientListSection {
     height: 80%;
     padding: 15px 0px;
-    .searchSection{
-        input,
-        textarea {
-          border: 1px solid;
-          border-radius: 8px;
-          padding: 0 15px;
-          margin: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    .addSection {
+      display: flex;
+      justify-content: flex-end;
+    }
+    .searchSection {
+      position: relative;
+      input,
+      textarea {
+        border: 1px solid;
+        border-radius: 8px;
+        padding: 0 15px;
+        margin: 5px;
+      }
+      input {
+        width: 300px;
+        height: 30px;
+      }
+      .searchResult {
+        position: absolute;
+        background-color: #f8feff;
+        box-shadow: 0px 13px 19px rgba(0, 0, 0, 0.07);
+        width: 90%;
+        padding:0;
+      }
+      .item {
+        list-style: none;
+        font-size: 16px;
+        padding: 0;
+        margin: 0 15px;
+
+        p {
+          padding-bottom: 5px;
         }
-        input{
-          width: 300px;
-          height: 30px;
+        &:hover {
+            background-color: #58af9b;
         }
       }
-      .individual{
-        display: flex;
-        justify-content: space-between;
-        button{
-          background:transparent;
-          border: none;
-        }
-
-}
+        
+    }
+    .individual {
+      display: flex;
+      justify-content: space-between;
+      button {
+        background: transparent;
+        border: none;
+      }
+    }
   }
- 
 }
