@@ -44,3 +44,16 @@ Pour installer et faire fonctionner le projet avec Docker :
    docker-compose up -d
 
 
+## Green Code 
+1. **Clean code :**
+ - Effectuer des revues de code pour éliminer les erreurs comme les boucles infinies et les bugs.
+ - Écrivez du code clair et bien commenté pour faciliter la maintenance et réduire le besoin de réécriture ou de refactoring fréquents.
+2. **Pratiques pour une Énergie Écologique :**
+ - Choisir des fournisseurs qui utilisent des sources d'énergie renouvelable et des systèmes de refroidissement écoénergétiques.
+ - Optimisez le code pour réduire le temps d'exécution et l'utilisation des ressources, ce qui réduit l'empreinte carbone associée au traitement des données.
+3. **Optimisation des Performances**
+ - Utilisez des algorithmes efficaces en termes de temps et d'espace. Privilégiez les solutions avec une complexité algorithmique plus faible.
+ - Implémentez des mécanismes de cache pour éviter de recalculer des valeurs ou de faire des appels réseau inutiles.
+4. **Pratiques pour une Infrastructure Durable**
+ - Pour les projets Dockerisés, assurez-vous que les conteneurs sont légers et que les images Docker sont optimisées pour réduire leur taille et le temps de démarrage.
+
