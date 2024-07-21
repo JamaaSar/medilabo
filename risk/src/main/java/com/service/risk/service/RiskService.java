@@ -12,6 +12,13 @@ import java.time.Period;
 import java.time.ZoneId;
 import java.util.*;
 
+
+/**
+ * Service class for calculating diabetes risk for patients.
+ * This service calculates the risk of diabetes based on patient data and notes.
+ * It uses NoteServiceClient to retrieve notes and  PatientServiceClient
+ * to fetch patient details. The risk is calculated based on predefined triggers and patient information.
+ */
 @RequiredArgsConstructor
 @Service
 public class RiskService {
@@ -23,6 +30,15 @@ public class RiskService {
             "Fumeur", "Fumeuse", "Anormal", "Cholestérol",
             "Vertiges", "Rechute", "Réaction", "Anticorps"
     );
+
+    /**
+     * Calculates the risk of diabetes for a given patient.
+     * The risk is assessed based on the number of trigger factors found in the patient's notes,
+     * the patient's age, and gender.
+     *
+     * @param patientId the ID of the patient for whom the risk is to be calculated.
+     * @return a String representing the risk level: "None", "Borderline", "EarlyOnset", or "InDanger".
+     */
     public String calculateRiskDiabete(Integer patientId){
 
 
@@ -57,6 +73,13 @@ public class RiskService {
             return "None";
         }
     }
+
+    /**
+     * Counts the number of trigger factors present in the notes.
+     *
+     * @param noteList a list of NoteDTO instances representing the patient's notes.
+     * @return the count of triggers found in the notes.
+     */
     private int countTriggers(List<NoteDTO> noteList){
         int counter = 0;
         for (NoteDTO note : noteList) {
@@ -69,6 +92,13 @@ public class RiskService {
         }
         return counter;
     }
+
+    /**
+     * Determines if the patient's age is over 30 years.
+     *
+     * @param birthDate the birth date of the patient.
+     * @return true if the patient's age is 30 years or older, false otherwise.
+     */
     private boolean isOver30(Date birthDate) {
         LocalDate today = LocalDate.now();
         LocalDate date = birthDate.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();

@@ -11,6 +11,13 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+/**
+ * Service class for managing patients.
+ * This service provides methods for CRUD operations on Patient entities.
+ * It uses PatientRepository to interact with the database.
+ * And PatientMapper convert between entity and DTO objects.
+ *
+ */
 @RequiredArgsConstructor
 @Service
 public class PatientService {

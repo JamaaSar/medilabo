@@ -1,14 +1,11 @@
 package com.service.gateway.service;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.security.access.SecurityConfig;
+import org.springframework.cloud.gateway.support.NotFoundException;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.stereotype.Service;
 
 @Service
 public class CustomUserDetailsService {
-    private static final Logger log = LoggerFactory.getLogger(SecurityConfig.class);
 
     public User findByUsername(String username) {
         if ("user".equals(username)) {
@@ -26,7 +23,7 @@ public class CustomUserDetailsService {
                             .build(
             );
         } else {
-            return null;
+            throw new NotFoundException("Utilisateur inconnu");
         }
     }
 }

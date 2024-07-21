@@ -37,8 +37,6 @@ public class JWTService {
             Claims claims  =
                     Jwts.parser().setSigningKey(secretKey).build().parseClaimsJws(token).getBody();
             return claims;
-        } catch (SignatureException ex) {
-            throw new JwtSecurityException("Invalid JWT signature");
         } catch (MalformedJwtException ex) {
             throw new JwtSecurityException("Invalid JWT token");
         } catch (ExpiredJwtException ex) {

@@ -15,6 +15,14 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+
+/**
+ * Service class for managing notes.
+ * This service provides methods for CRUD operations on Note entities.
+ * It uses NoteRepository to interact with the database,
+ * NoteMapper convert between entity and DTO objects
+ * and PatientServiceClient to interact with patient data.
+ */
 @RequiredArgsConstructor
 @Service
 public class NoteService {

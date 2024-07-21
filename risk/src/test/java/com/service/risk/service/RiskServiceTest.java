@@ -45,10 +45,14 @@ public class RiskServiceTest {
     private List<NoteDTO> noteList2 = new ArrayList<>();
     private List<NoteDTO> noteList3 = new ArrayList<>();
     private List<NoteDTO> noteList4 = new ArrayList<>();
+    private List<NoteDTO> noteList5 = new ArrayList<>();
     private PatientDTO patient1 = new PatientDTO();
     private PatientDTO patient2 = new PatientDTO();
     private PatientDTO patient3 = new PatientDTO();
     private PatientDTO patient4 = new PatientDTO();
+    private PatientDTO patient5 = new PatientDTO();
+    private PatientDTO patient6 = new PatientDTO();
+
 
     private static final String id = "60c72b2f9b1d8b3b4c8e69d1";
 
@@ -83,6 +87,13 @@ public class RiskServiceTest {
         patient4.setGenre("F");
         patient4.setAdressePostale("4 Valley Dr");
         patient4.setNumeroDeTelephone("400-555-6666");
+
+        patient5.setPrenom("TestEarlyOnset2");
+        patient5.setNom("Test");
+        patient5.setDateDeNaissance(sdf.parse("2002-06-28"));
+        patient5.setGenre("M");
+        patient5.setAdressePostale("4 Valley Dr");
+        patient5.setNumeroDeTelephone("400-555-6666");
 
         NoteDTO noteDTO1 = new NoteDTO();
         noteDTO1.setPatientId(1);
@@ -135,6 +146,12 @@ public class RiskServiceTest {
         noteList4.add(noteDTO7);
         noteList4.add(noteDTO8);
         noteList4.add(noteDTO9);
+        noteList4.add(noteDTO9);
+        NoteDTO noteDTO10 = new NoteDTO();
+        noteDTO10.setPatientId(5);
+        noteDTO10.setPatientName("TestEarlyOnset2");
+        noteDTO10.setNoteObservation("Taille, Poids, Cholestérol, Vertige et Réaction Tests de laboratoire indiquant un taux de cholestérol LDL élevé");
+        noteList5.add(noteDTO10);
 
     }
 
@@ -144,7 +161,8 @@ public class RiskServiceTest {
             "2, Borderline",
             "3, InDanger",
             "4, EarlyOnset",
-            "5, None"
+            "5, EarlyOnset",
+            "6, EarlyOnset"
     })
     void calculateRiskid1Test(int patientId,String expected) {
         List<NoteDTO> noteList;
@@ -161,6 +179,9 @@ public class RiskServiceTest {
         }else if(patientId == 4){
             patientDTO = patient4;
             noteList = noteList4;
+        }else if(patientId == 5){
+            patientDTO = patient5;
+            noteList = noteList5;
         }else{
             patientDTO = patient4;
             noteList = new ArrayList<>();

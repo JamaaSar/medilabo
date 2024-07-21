@@ -2,10 +2,7 @@ package com.service.gateway.service;
 
 import com.service.gateway.dto.CredentialsDTO;
 import com.service.gateway.dto.UserDTO;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.access.SecurityConfig;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.stereotype.Service;
 

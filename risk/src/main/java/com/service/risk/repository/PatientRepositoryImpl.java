@@ -2,7 +2,6 @@ package com.service.risk.repository;
 
 import com.service.risk.client.PatientServiceClient;
 import com.service.risk.dto.PatientDTO;
-import com.service.risk.repository.PatientRepository;
 import feign.FeignException;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Repository;
