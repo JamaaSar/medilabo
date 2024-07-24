@@ -64,7 +64,7 @@ public class RiskService {
         }
         else if ( isMale && !ageIsOver30 && counter == 3
                 || !isMale && !ageIsOver30 && counter == 4
-                || ageIsOver30 && counter == 6 && counter == 7 )
+                || ageIsOver30 && (counter == 6  || counter == 7) )
         {
             return "InDanger";
         }

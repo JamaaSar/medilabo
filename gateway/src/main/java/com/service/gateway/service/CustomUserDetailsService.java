@@ -1,6 +1,6 @@
 package com.service.gateway.service;
 
-import org.springframework.cloud.gateway.support.NotFoundException;
+import com.service.gateway.exception.NotFoundException;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.stereotype.Service;
 

@@ -2,6 +2,7 @@ package com.service.gateway.service;
 
 import com.service.gateway.exception.JwtSecurityException;
 import io.jsonwebtoken.*;
+import io.jsonwebtoken.io.Parser;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;

@@ -46,12 +46,18 @@ public class RiskServiceTest {
     private List<NoteDTO> noteList3 = new ArrayList<>();
     private List<NoteDTO> noteList4 = new ArrayList<>();
     private List<NoteDTO> noteList5 = new ArrayList<>();
+    private List<NoteDTO> noteList6 = new ArrayList<>();
+    private List<NoteDTO> noteList7 = new ArrayList<>();
+    private List<NoteDTO> noteList8 = new ArrayList<>();
+
     private PatientDTO patient1 = new PatientDTO();
     private PatientDTO patient2 = new PatientDTO();
     private PatientDTO patient3 = new PatientDTO();
     private PatientDTO patient4 = new PatientDTO();
     private PatientDTO patient5 = new PatientDTO();
     private PatientDTO patient6 = new PatientDTO();
+    private PatientDTO patient7 = new PatientDTO();
+    private PatientDTO patient8 = new PatientDTO();
 
 
     private static final String id = "60c72b2f9b1d8b3b4c8e69d1";
@@ -94,6 +100,27 @@ public class RiskServiceTest {
         patient5.setGenre("M");
         patient5.setAdressePostale("4 Valley Dr");
         patient5.setNumeroDeTelephone("400-555-6666");
+
+        patient6.setPrenom("TestEarlyOnset3");
+        patient6.setNom("Test");
+        patient6.setDateDeNaissance(sdf.parse("1992-06-28"));
+        patient6.setGenre("M");
+        patient6.setAdressePostale("4 Valley Dr");
+        patient6.setNumeroDeTelephone("400-555-6666");
+
+        patient7.setPrenom("InDanger1");
+        patient7.setNom("Test");
+        patient7.setDateDeNaissance(sdf.parse("2012-06-28"));
+        patient7.setGenre("M");
+        patient7.setAdressePostale("4 Valley Dr");
+        patient7.setNumeroDeTelephone("400-555-6666");
+
+        patient8.setPrenom("InDanger1");
+        patient8.setNom("Test");
+        patient8.setDateDeNaissance(sdf.parse("1992-06-28"));
+        patient8.setGenre("F");
+        patient8.setAdressePostale("4 Valley Dr");
+        patient8.setNumeroDeTelephone("400-555-6666");
 
         NoteDTO noteDTO1 = new NoteDTO();
         noteDTO1.setPatientId(1);
@@ -147,11 +174,32 @@ public class RiskServiceTest {
         noteList4.add(noteDTO8);
         noteList4.add(noteDTO9);
         noteList4.add(noteDTO9);
+
         NoteDTO noteDTO10 = new NoteDTO();
         noteDTO10.setPatientId(5);
         noteDTO10.setPatientName("TestEarlyOnset2");
-        noteDTO10.setNoteObservation("Taille, Poids, Cholestérol, Vertige et Réaction Tests de laboratoire indiquant un taux de cholestérol LDL élevé");
+        noteDTO10.setNoteObservation("Taille, Poids, Cholestérol, Vertiges et Réaction ");
         noteList5.add(noteDTO10);
+
+        NoteDTO noteDTO11 = new NoteDTO();
+        noteDTO11.setPatientId(6);
+        noteDTO11.setPatientName("TestEarlyOnset3");
+        noteDTO11.setNoteObservation("Taille, Poids, Cholestérol, Vertiges, Fumeur, " +
+                "Microalbumine, Rechute, Cholestérol et Réaction ");
+        noteList6.add(noteDTO11);
+
+        NoteDTO noteDTO12 = new NoteDTO();
+        noteDTO12.setPatientId(7);
+        noteDTO12.setPatientName("InDanger1");
+        noteDTO12.setNoteObservation("Taille, Poids et Réaction ");
+        noteList7.add(noteDTO12);
+
+        NoteDTO noteDTO13 = new NoteDTO();
+        noteDTO13.setPatientId(8);
+        noteDTO13.setPatientName("InDanger2");
+        noteDTO13.setNoteObservation("Taille, Poids, Vertiges, Cholestérol, Fumeur et " +
+                "Réaction ");
+        noteList8.add(noteDTO13);
 
     }
 
@@ -162,7 +210,9 @@ public class RiskServiceTest {
             "3, InDanger",
             "4, EarlyOnset",
             "5, EarlyOnset",
-            "6, EarlyOnset"
+            "6, EarlyOnset",
+            "7, InDanger",
+            "8, InDanger",
     })
     void calculateRiskid1Test(int patientId,String expected) {
         List<NoteDTO> noteList;
@@ -182,6 +232,15 @@ public class RiskServiceTest {
         }else if(patientId == 5){
             patientDTO = patient5;
             noteList = noteList5;
+        }else if(patientId == 6){
+            patientDTO = patient6;
+            noteList = noteList6;
+        }else if(patientId == 7){
+            patientDTO = patient7;
+            noteList = noteList7;
+        }else if(patientId == 8){
+            patientDTO = patient8;
+            noteList = noteList8;
         }else{
             patientDTO = patient4;
             noteList = new ArrayList<>();

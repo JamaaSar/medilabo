@@ -1,5 +1,7 @@
 package com.service.risk.config;
 
+import com.service.risk.exceptions.CustomErrorDecoder;
+import feign.codec.ErrorDecoder;
 import io.swagger.v3.oas.models.OpenAPI;
 import io.swagger.v3.oas.models.info.Info;
 import org.springframework.context.annotation.Bean;
@@ -20,5 +22,9 @@ public class OpenApiConfig {
                 .info(new Info().title("Risk Service API")
                         .version("1.0")
                         .description("API for managing risk"));
+    }
+    @Bean
+    public ErrorDecoder errorDecoder() {
+        return new CustomErrorDecoder();
     }
 }

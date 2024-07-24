@@ -1,5 +1,7 @@
 package com.service.note.config;
 
+import com.service.note.exceptions.CustomErrorDecoder;
+import feign.codec.ErrorDecoder;
 import io.swagger.v3.oas.models.info.Info;
 import io.swagger.v3.oas.models.OpenAPI;
 import org.springframework.context.annotation.Bean;
@@ -20,5 +22,10 @@ public class OpenApiConfig {
                 .info(new Info().title("Note Service API")
                         .version("1.0")
                         .description("API for managing note"));
+    }
+
+    @Bean
+    public ErrorDecoder errorDecoder() {
+        return new CustomErrorDecoder();
     }
 }

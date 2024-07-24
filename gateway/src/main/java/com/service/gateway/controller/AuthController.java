@@ -30,7 +30,7 @@ public class AuthController {
     public ResponseEntity<UserDTO> login(@RequestBody CredentialsDTO credentialsDto) {
         User user=
                 customUserDetailsService.findByUsername(credentialsDto.username());
-        String token= jwtService.generateToken(user);
+        String token = jwtService.generateToken(user);
         UserDTO userDTO = new UserDTO(user.getUsername(), token);
 
         return ResponseEntity.ok(userDTO);
